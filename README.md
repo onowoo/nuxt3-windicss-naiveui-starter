@@ -40,5 +40,5 @@ We recommend using [VS Code](https://code.visualstudio.com/) with [Volar](https:
 
 ### Clone to local
 
-pnpm i # If you don't have pnpm installed, run: npm install -g pnpm
-```
+yarn
+yarn dev
