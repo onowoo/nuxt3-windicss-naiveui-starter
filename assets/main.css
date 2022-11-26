@@ -1,0 +1,20 @@
+.container {
+    width: 100%;
+    max-width: 1280px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.n-drawer-mask {
+    backdrop-filter: blur(5px);
+}
+.n-tabs .n-tabs-nav-scroll-wrapper.n-tabs-nav-scroll-wrapper--shadow-before::before {
+    box-shadow:none
+}
+.n-tabs .n-tabs-nav-scroll-wrapper.n-tabs-nav-scroll-wrapper--shadow-after::after {
+    box-shadow:none
+}
+.n-tabs .n-tabs-nav .n-tabs-nav__suffix {
+    padding-left: 0;
+}
