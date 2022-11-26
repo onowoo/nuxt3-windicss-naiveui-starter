@@ -3,14 +3,10 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@pinia/nuxt',
     'nuxt-windicss',
-    '@nuxtjs/color-mode',
   ],
   experimental: {
     reactivityTransform: true,
     inlineSSRStyles: false,
-  },
-  colorMode: {
-    classSuffix: '',
   },
   build: {
     transpile:
@@ -22,13 +18,5 @@ export default defineNuxtConfig({
             '@juggle/resize-observer',
           ]
         : ['@juggle/resize-observer'],
-  },
-  vite: {
-    optimizeDeps: {
-      include:
-        process.env.NODE_ENV === 'development'
-          ? ['naive-ui', 'vueuc', 'date-fns-tz/esm/formatInTimeZone']
-          : [],
-    },
   },
 })

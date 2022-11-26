@@ -3,7 +3,6 @@ import { NConfigProvider, darkTheme, useOsTheme } from 'naive-ui'
 import { AppSetup } from './utils/app'
 AppSetup()
 const theme = useState('theme.current')
-const locale = useState('locale.setting')
 const osThemeRef = useOsTheme()
 const naiveTheme = ref(null)
 onMounted(() => {
@@ -24,7 +23,7 @@ watch(
 </script>
 
 <template>
-  <Html :class="theme" :lang="locale">
+  <Html :class="theme">
     <Body
       class="antialiased duration-300 transition-colors text-gray-800 dark:text-gray-200 dark:bg-dark-300"
     >

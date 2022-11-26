@@ -91,13 +91,13 @@ export function ThemeManager() {
   onBeforeMount(() => init())
   onMounted(() => {
     window
-      .matchMedia('(prefers-color-scheme: dark)')
+      // .matchMedia('(prefers-color-scheme: dark)')
       .addEventListener('change', onThemeSystemChange)
     intervalCheckTime = setInterval(onRealtimeCheck, 1000)
   })
   onBeforeUnmount(() => {
     window
-      .matchMedia('(prefers-color-scheme: dark)')
+      // .matchMedia('(prefers-color-scheme: dark)')
       .removeEventListener('change', onThemeSystemChange)
     if (intervalCheckTime)
       clearInterval(intervalCheckTime)

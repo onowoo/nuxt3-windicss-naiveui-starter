@@ -14,7 +14,6 @@
     "@css-render/vue3-ssr": "^0.15.11",
     "@iconify-json/carbon": "^1.1.10",
     "@iconify-json/twemoji": "^1.1.5",
-    "@nuxtjs/color-mode": "^3.1.8",
     "@pinia/nuxt": "^0.4.3",
     "@vicons/ionicons5": "^0.12.0",
     "@vueuse/nuxt": "^9.5.0",
@@ -23,8 +22,6 @@
     "nuxt": "^3.0.0",
     "nuxt-windicss": "^2.5.5",
     "pinia": "^2.0.23",
-    "typescript": "^4.9.3",
-    "unplugin-auto-import": "^0.12.0",
-    "unplugin-vue-components": "^0.22.11"
+    "typescript": "^4.9.3"
   }
 }
