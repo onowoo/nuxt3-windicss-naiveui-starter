@@ -1,5 +1,4 @@
 <script setup>
-import { NButton, NDropdown, NIcon } from 'naive-ui'
 import { CloudyNightOutline, SunnyOutline } from '@vicons/ionicons5'
 import { availableThemes } from '~/utils/theme'
 
