@@ -5,6 +5,7 @@ export default defineNuxtConfig({
   modules: [
     '@vueuse/nuxt',
     '@pinia/nuxt',
+    "@pinia-plugin-persistedstate/nuxt",
     'nuxt-windicss',
   ],
   experimental: {
@@ -34,5 +35,6 @@ export default defineNuxtConfig({
         resolvers: [NaiveUiResolver()], // Automatically register all components in the `components` directory
       }),
     ],
+    ssr: { noExternal: ['@nuxtjs/vite'] }
   },
 })

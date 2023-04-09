@@ -1,58 +1,125 @@
-import md5 from "js-md5"
 import {
     createDiscreteApi
 } from "naive-ui"
-
 export const fetchConfig = {
-    baseURL:"http://pan.zhuiun.com:81/api.php",
-    appid:"maozedong",
-    appSecret: "xiao379ye",
-    timestamp : Date.parse(new Date()) / 1000,
-    signature:md5(md5("maozedong" + "xiao379ye" + Date.parse(new Date()) / 1000)),
+    baseURL:"http://api.zhuiun.com:81",
     headers:{
-        'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8' 
+        'content-type': 'application/json'
     },
+    noLoginUrl: [
+        '/addons/cms/api.common/init',
+        '/addons/cms/api.common/captcha',
+        '/addons/cms/api.ems/send',
+        '/addons/cms/api.sms/send',
+        '/addons/cms/api.archives/index',
+        '/addons/cms/api.archives/detail',
+        '/addons/cms/api.login/login',
+        '/addons/cms/api.login/mobilelogin',
+        '/addons/cms/api.login/register',
+        '/addons/cms/api.login/resetpwd',
+        '/addons/cms/api.login/wxLogin',
+        '/addons/cms/api.login/appLogin',
+        '/addons/cms/api.login/getWechatMobile',
+        '/addons/cms/api.my/aboutus',
+        '/addons/cms/api.my/agreement',
+        '/addons/third/api/getAuthUrl',
+        '/addons/third/api/callback',
+        '/addons/third/api/account',
+        '/addons/cms/api.search/index',
+        '/addons/cms/api.tag/index',
+        '/addons/cms/api.common/getCategory',
+        '/addons/cms/api.user/getSigned',
+        '/addons/cms/api.user/userInfo',
+        '/addons/cms/api.comment/index',
+        '/addons/vip/api.index/index',
+        '/addons/cms/api.diyform/formList',
+        '/addons/cms/api.diyform/show',
+        '/addons/cms/api.diyform/index',
+        '/addons/cms/api.common/selectpage',
+        '/addons/cms/api.diyform/postForm',
+        '/addons/cms/api.special/special',
+        '/addons/cms/api.special/index',
+        '/addons/cms/api.page/detail'
+      ],
 }
-//请求体封装
+
 function useGetFetchOptions(options = {}){
     options.baseURL = options.baseURL ?? fetchConfig.baseURL
-    options.headers = options.headers ?? fetchConfig.headers
-    options.signature = fetchConfig.signature
-    options.timestamp = fetchConfig.timestamp
-    options.appid = fetchConfig.appid
+    options.headers = fetchConfig.headers
     options.initialCache = options.initialCache ?? false
     options.lazy = options.lazy ?? false
 
+
     // 用户登录，默认传token
-    // const token = useCookie("token")
-   
-    // if(token.value){ 
-    //     options.headers.token = token.value
-    // }
+    const token = useCookie("token")
+    if(token.value){
+        options.headers.token = token.value
+    }
 
     return options
 }
-export async function useHttp(key,url,options = {}) {
+
+
+export async function useHttp(key,url,options = {}){
     options = useGetFetchOptions(options)
     options.key = key
+    if (!fetchConfig.noLoginUrl.includes(url)) {
+        const { message } = createDiscreteApi(["message"])
+        message.error("请先登录") 
+        return navigateTo("/login")
+    }
+    if(options.$){
+        const data = ref(null)
+        const error = ref(null)
+        return await $fetch(url,options).then(res=>{
+            data.value = res.data
+            return {
+                data,
+                error
+            }
+        }).catch(err=>{
+            const msg = err?.data?.data
+            if(process.client){
+                const { message } = createDiscreteApi(["message"])
+                message.error(msg || '服务端错误')
+            }
+            error.value = msg
+            return {
+                data,
+                error
+            }
+        })
+    }
+
     let res = await useFetch(url,{
         ...options,
-        //相当于响应拦截器
-        // transform:(res)=>{
-        //     return res.data
-        // }
+        // 相当于响应拦截器
+        transform:(res)=>{
+            return res.data
+        },
     })
-    console.log(res);
+
+    // 客户端错误处理
+    if(process.client && res.error.value){
+        const msg = res.error.value?.data?.data
+        if(!options.lazy){
+            const { message } = createDiscreteApi(["message"])
+            message.error(msg || '服务端错误')
+        }
+    }
+
     return res
 }
 
-//get
-export function useHttpGet(key,url,options={}){
+// GET请求
+export function useHttpGet(key,url,options = {}){
     options.method = "GET"
     return useHttp(key,url,options)
 }
-//post
-export function useHttpPost(key,url,options={}){
-    options.method = "POST"
+
+// POST请求
+export function useHttpPost(key,url,options = {}){
+    options.method = "POST";
+    options.body = options.data;
     return useHttp(key,url,options)
 }

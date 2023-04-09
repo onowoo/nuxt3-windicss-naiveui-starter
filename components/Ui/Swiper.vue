@@ -2,30 +2,12 @@
     <n-carousel
       effect="fade"
       autoplay
-      class="shadow-md h-100"
+      class="shadow-md h-screen"
     >
-      <n-carousel-item class="carousel-img">
+      <n-carousel-item class="carousel-img" v-for="(item,index) in imgList.bannerList" :key="index">
         <img
           class="carousel-img"
-          src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel1.jpeg"
-        >
-      </n-carousel-item>
-      <n-carousel-item class="carousel-img">
-        <img
-          class="carousel-img"
-          src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel2.jpeg"
-        >
-      </n-carousel-item>
-      <n-carousel-item class="carousel-img">
-        <img
-          class="carousel-img"
-          src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel3.jpeg"
-        >
-      </n-carousel-item>
-      <n-carousel-item class="carousel-img">
-        <img
-          class="carousel-img"
-          src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel4.jpeg"
+          :src="item.image"
         >
       </n-carousel-item>
 
@@ -41,7 +23,12 @@
         </template>
     </n-carousel>
   </template>
-
+<script setup>
+const imgList = defineProps({
+  bannerList: Array
+})
+console.log(imgList.bannerList);
+</script>
   
   <style scoped>
   .carousel-img {

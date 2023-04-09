@@ -14,6 +14,6 @@ import { UiTelegram } from '~~/.nuxt/components';
 
 <style>
 .container {
-  max-width: 980px;
+  max-width: 1200px;
 }
 </style>
