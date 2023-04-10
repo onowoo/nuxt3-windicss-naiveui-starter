@@ -15,11 +15,50 @@
                 </NButton>
             </template>
             <div>
-                <div>啊！戏霸啊！戏霸啊！戏霸</div>
-                <div>啊！戏霸啊！戏霸啊！戏霸</div>
-                <div>啊！戏霸啊！戏霸啊！戏霸</div>
-                <div>啊！戏霸啊！戏霸啊！戏霸</div>
-                <div>啊！戏霸啊！戏霸啊！戏霸</div>
+                <n-grid x-gap="12" :cols="2" :y-gap="8">
+                    <n-gi>
+                    <div class="h-10 flex items-center justify-center" ><img :src="user.avatar" alt="" class="w-10 rounded-full"></div>
+                    </n-gi>
+                    <n-gi>
+                        <div class="h-10 flex items-center" >{{ user.nickname }}</div>
+                    </n-gi>
+                    <n-gi>
+                    <div class="h-10 flex items-center justify-center" >账户:</div>
+                    </n-gi>
+                    <n-gi>
+                        <div class="h-10 flex items-center" >{{ user.username }}</div>
+                    </n-gi>
+                    <n-gi>
+                    <div class="h-10 flex items-center justify-center" >手机:</div>
+                    </n-gi>
+                    <n-gi>
+                        <div class="h-10 flex items-center" >{{ user.mobile }}</div>
+                    </n-gi>
+                    <n-gi>
+                    <div class="h-10 flex items-center justify-center" >积分:</div>
+                    </n-gi>
+                    <n-gi>
+                        <div class="h-10 flex items-center" >{{ user.score }}</div>
+                    </n-gi>
+                    <n-gi>
+                    <div class="h-10 flex items-center justify-center" >余额:</div>
+                    </n-gi>
+                    <n-gi>
+                        <div class="h-10 flex items-center" >{{ user.money }}</div>
+                    </n-gi>
+                    <n-gi>
+                    <div class="h-10 flex items-center justify-center" >等级:</div>
+                    </n-gi>
+                    <n-gi>
+                        <div class="h-10 flex items-center" >{{ user.level }}</div>
+                    </n-gi>
+                    <n-gi>
+                    <div class="h-10 flex items-center justify-center" >vip:</div>
+                    </n-gi>
+                    <n-gi>
+                        <div class="h-10 flex items-center" >{{ user.vip }}</div>
+                    </n-gi>
+                </n-grid>
             </div>
         </n-popover>
 
