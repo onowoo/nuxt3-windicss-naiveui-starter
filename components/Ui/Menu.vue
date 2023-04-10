@@ -1,6 +1,4 @@
 
-import { UiTelegram } from '~~/.nuxt/components';
-
 <template>
       <div class="flex items-center gap-2">
         <nuxt-link to="/"><div class="mr-8">home</div></nuxt-link>

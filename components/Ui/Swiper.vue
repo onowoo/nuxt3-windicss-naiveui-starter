@@ -2,7 +2,7 @@
     <n-carousel
       effect="fade"
       autoplay
-      class="shadow-md h-screen"
+      class="shadow-md h-140 mx-auto container mt-20"
     >
       <n-carousel-item class="carousel-img" v-for="(item,index) in imgList.bannerList" :key="index">
         <img
@@ -27,7 +27,6 @@
 const imgList = defineProps({
   bannerList: Array
 })
-console.log(imgList.bannerList);
 </script>
   
   <style scoped>
