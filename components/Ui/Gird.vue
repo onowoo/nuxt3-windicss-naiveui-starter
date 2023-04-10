@@ -1,17 +1,9 @@
 <template>
-    <n-grid :x-gap="20" :y-gap="20" :cols="3" class="my-6">
-      <n-grid-item class="hover:shadow-md">
-        <n-card title="标题">
+    <n-grid :x-gap="20" :y-gap="20" :cols="4" class="my-6">
+      <n-grid-item v-for="(item,index) in posts.archives" :key="index" class="hover:shadow-md">
+        <n-card :title="item.title">
             <template #cover>
-            <img draggable="false" src="https://www.creative-tim.com/learning-lab/assets/tailwind-soft-ui-dashboard/img/home-decor-1.jpg">
-            </template>
-            <UiMeta />
-        </n-card>
-      </n-grid-item>
-      <n-grid-item v-for="i in 16" :key="i" class="hover:shadow-md">
-        <n-card :title="title">
-            <template #cover>
-            <img draggable="false" src="https://www.creative-tim.com/learning-lab/assets/tailwind-soft-ui-dashboard/img/home-decor-1.jpg">
+            <img draggable="false" :src="item.image">
             </template>
             <UiMeta />
         </n-card>
@@ -19,9 +11,20 @@
     </n-grid>
   </template>
 <script setup>
- const title = 'Firefox浏览器尚未支持尚未支持'
+ const posts = defineProps({
+  archives: Array
+})
+console.log(posts.archives);
 </script>
   <style>
+  .n-card > .n-card-header .n-card-header__main{
+    font-size: 14px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
   .n-card .n-card-cover img{
     @apply transform scale-100 ease-in-out duration-700 delay-300
   }

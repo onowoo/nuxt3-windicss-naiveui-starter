@@ -2,11 +2,11 @@
     <n-carousel
       effect="fade"
       autoplay
-      class="shadow-md h-140 mx-auto container mt-20"
+      class="shadow-md h-140 mx-auto rounded-md container mt-20"
     >
-      <n-carousel-item class="carousel-img" v-for="(item,index) in imgList.bannerList" :key="index">
+      <n-carousel-item class="carousel-img rounded-md" v-for="(item,index) in filteredBannerList" :key="index">
         <img
-          class="carousel-img"
+          class="carousel-img rounded-md"
           :src="item.image"
         >
       </n-carousel-item>
@@ -27,6 +27,9 @@
 const imgList = defineProps({
   bannerList: Array
 })
+const filteredBannerList = computed(() => {
+      return imgList.bannerList.filter(item => item.flag === 'top');
+    });
 </script>
   
   <style scoped>
@@ -35,6 +38,8 @@ const imgList = defineProps({
     width: 100%;
     height: 100%;
     object-fit: cover;
+    -webkit-user-drag: none;
+    user-drag:none
   }
 
 .custom-dots {
