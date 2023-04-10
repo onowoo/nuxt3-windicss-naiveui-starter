@@ -7,6 +7,7 @@
         <UiSearch />
         <UiTheme />
         <UiTelegram />
+        <UiUser />
       </div>
 </template>
 
