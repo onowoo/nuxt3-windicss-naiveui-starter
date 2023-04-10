@@ -10,5 +10,5 @@ const { data:post } = await getArchives()
 
 const posts = JSON.parse(JSON.stringify(post.value.pageList.data))
 
-console.log(posts);
+// console.log(posts);
 </script>

@@ -26,10 +26,9 @@ export function getSmsSend(data){
     })
 }
 // 个人中心
-export function getUserIndex(data){
+export function getUserIndex(){
     return useHttpGet("getUserIndex","/addons/cms/api.user/index",{
         lazy:true,
-        data
     })
 }
 // 个人资料

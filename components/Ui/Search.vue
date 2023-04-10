@@ -4,8 +4,8 @@ import { Search } from '@vicons/ionicons5'
 <template>
         <div>
          
-            <NButton circle size="small">
-                <NIcon :size="18" class="flex">
+            <NButton quaternary circle size="small">
+                <NIcon :size="20" class="flex">
                 <Search />
                 </NIcon>
             </NButton>

@@ -3,27 +3,20 @@ import { createDiscreteApi } from "naive-ui";
 export const useUser = ()=> useState("user",()=>null)
 
 // 更新用户信息
-export async function useRefreshUserInfo(u){
+export async function useRefreshUserInfo(){
     const token = useCookie("token")
     const user = useUser()
     // 用户已登录，直接获取用户信息
     if(token.value){
-        let {
-            data,
-            error
-        } = await getUserInfo(u)
-
-        if(data.value){
-            
-            user.value = data.value
-        }
+        const {data} = await getUserIndex()
+        const userData = JSON.parse(JSON.stringify(data.value));
+        user.value = userData.userInfo;
     }
-    // console.log(user.value);
 }
 
 // 退出登录
 export async function useLogout(){
-    await useLogoutApi()
+    await goUserLogout()
     const user = useUser()
     user.value = null
     const token = useCookie("token")

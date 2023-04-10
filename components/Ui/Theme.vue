@@ -15,11 +15,11 @@ const handleSelect = (key) => { themeSetting.value = key }
 <template>
   <div>
     <NDropdown trigger="hover" :options="options" class="text-dark-50" @select="handleSelect">
-      <NButton circle size="small">
-        <NIcon :size="18" class="flex dark:hidden">
+      <NButton quaternary circle size="small">
+        <NIcon :size="20" class="flex dark:hidden">
           <SunnyOutline />
         </NIcon>
-        <NIcon :size="18" class="hidden dark:flex">
+        <NIcon :size="20" class="hidden dark:flex">
           <CloudyNightOutline />
         </NIcon>
       </NButton>

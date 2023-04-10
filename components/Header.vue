@@ -7,9 +7,9 @@
   </header>
 </template>
 <script setup>
-const { data } = await getConfig()
+const { data:config } = await getConfig()
 
-const logoImg = data.value.sitelogo
-const siteName = data.value.sitename
+const logoImg = config.value.sitelogo
+const siteName = config.value.sitename
 
 </script>

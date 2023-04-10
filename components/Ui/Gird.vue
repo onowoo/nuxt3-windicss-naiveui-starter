@@ -14,7 +14,7 @@
  const posts = defineProps({
   archives: Array
 })
-console.log(posts.archives);
+// console.log(posts.archives)
 </script>
   <style>
   .n-card > .n-card-header .n-card-header__main{

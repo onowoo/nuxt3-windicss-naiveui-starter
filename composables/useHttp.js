@@ -63,7 +63,8 @@ function useGetFetchOptions(options = {}){
 export async function useHttp(key,url,options = {}){
     options = useGetFetchOptions(options)
     options.key = key
-    if (!fetchConfig.noLoginUrl.includes(url)) {
+    const token = useCookie("token")
+    if (!fetchConfig.noLoginUrl.includes(url) && !token.value) {
         const { message } = createDiscreteApi(["message"])
         message.error("请先登录") 
         return navigateTo("/login")
