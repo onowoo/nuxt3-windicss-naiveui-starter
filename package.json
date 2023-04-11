@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "@pinia-plugin-persistedstate/nuxt": "^1.1.1",
+    "@types/node": "^18.15.11",
     "unplugin-auto-import": "^0.14.4",
     "unplugin-vue-components": "^0.24.0"
   }

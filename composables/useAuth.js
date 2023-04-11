@@ -11,6 +11,7 @@ export async function useRefreshUserInfo(){
         const {data} = await getUserIndex()
         const userData = JSON.parse(JSON.stringify(data.value));
         user.value = userData.userInfo;
+        console.log(user.value);
     }
 }
 
