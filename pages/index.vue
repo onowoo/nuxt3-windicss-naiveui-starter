@@ -1,6 +1,9 @@
 <template>
   <UiSwiper :bannerList="posts"/>
   <div class="max-w-[1200px] mx-auto">
+    <UiIndexBanner :archives="posts"/>
+  </div>
+  <div class="max-w-[1200px] mx-auto">
     <UiGird :archives="posts"/>
   </div>
   <UiPagination />
