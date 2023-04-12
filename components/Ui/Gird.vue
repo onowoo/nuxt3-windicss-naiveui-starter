@@ -7,7 +7,7 @@
     <n-grid-item v-for="(item,index) in posts.archives" :key="index" class="hover:shadow-md">
       <n-card :title="item.title">
           <template #cover>
-          <img draggable="false" :src="item.image">
+          <img draggable="false" src="https://dummyimage.com/800x420" class="h-40">
           </template>
           <UiMeta />
       </n-card>

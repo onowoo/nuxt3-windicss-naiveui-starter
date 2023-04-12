@@ -5,11 +5,11 @@
       content-style="height:100%;margin:auto 0;padding:0 0"
       >
           <template #cover>
-          <img draggable="false" src="https://dummyimage.com/800x320" class="max-h-28">
+          <img draggable="false" src="https://dummyimage.com/800x300" class="max-h-28">
           </template>
           <div class="flex items-center h-16 pl-8">
             <div>
-              <n-icon size="40" color="#000">
+              <n-icon size="40" class="text-dark-100 dark:text-light-50">
                 <LogoApple />
               </n-icon>
             </div>
