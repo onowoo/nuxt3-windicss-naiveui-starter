@@ -1,15 +1,19 @@
 <template>
-    <n-grid :x-gap="20" :y-gap="20" :cols="4" class="my-6">
-      <n-grid-item v-for="(item,index) in posts.archives" :key="index" class="hover:shadow-md">
-        <n-card :title="item.title">
-            <template #cover>
-            <img draggable="false" :src="item.image">
-            </template>
-            <UiMeta />
-        </n-card>
-      </n-grid-item>
-    </n-grid>
-  </template>
+  <div class="text-lg flex items-center justify-between border-l-5 border-l-blue-400 pl-2 font-bold">
+    <div>最新发布</div>
+    <div class="text-gray-500 text-xs font-thin">More...</div>
+  </div>
+  <n-grid :x-gap="20" :y-gap="20" :cols="4" class="my-6">
+    <n-grid-item v-for="(item,index) in posts.archives" :key="index" class="hover:shadow-md">
+      <n-card :title="item.title">
+          <template #cover>
+          <img draggable="false" :src="item.image">
+          </template>
+          <UiMeta />
+      </n-card>
+    </n-grid-item>
+  </n-grid>
+</template>
 <script setup>
  const posts = defineProps({
   archives: Array
