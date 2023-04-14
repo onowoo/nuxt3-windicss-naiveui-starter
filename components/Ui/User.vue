@@ -1,78 +1,47 @@
 <template>
-    <div>
-     
-        <NButton quaternary circle size="small" v-if="!user" @click="navigateTo('/login')">
-            <NIcon :size="18" class="flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512"><path d="M332.64 64.58C313.18 43.57 286 32 256 32c-30.16 0-57.43 11.5-76.8 32.38c-19.58 21.11-29.12 49.8-26.88 80.78C156.76 206.28 203.27 256 256 256s99.16-49.71 103.67-110.82c2.27-30.7-7.33-59.33-27.03-80.6z" fill="currentColor"></path><path d="M432 480H80a31 31 0 0 1-24.2-11.13c-6.5-7.77-9.12-18.38-7.18-29.11C57.06 392.94 83.4 353.61 124.8 326c36.78-24.51 83.37-38 131.2-38s94.42 13.5 131.2 38c41.4 27.6 67.74 66.93 76.18 113.75c1.94 10.73-.68 21.34-7.18 29.11A31 31 0 0 1 432 480z" fill="currentColor"></path></svg>
-            </NIcon>
-        </NButton>
-        <n-popover placement="bottom-end" trigger="click" v-if="user">
-            <template #trigger>
-                <NButton quaternary circle size="small" v-if="user">
-                    <NIcon :size="20" class="flex items-center">
-                        <img :src="user.avatar" alt="" class="rounded-full">
-                    </NIcon>
-                </NButton>
-            </template>
-            <div>
-                <n-grid x-gap="12" :cols="2" :y-gap="8">
-                    <n-gi>
-                    <div class="h-10 flex items-center justify-center" ><img :src="user.avatar" alt="" class="w-10 rounded-full"></div>
-                    </n-gi>
-                    <n-gi>
-                        <div class="h-10 flex items-center" >{{ user.nickname }}</div>
-                    </n-gi>
-                    <n-gi>
-                    <div class="h-10 flex items-center justify-center" >账户:</div>
-                    </n-gi>
-                    <n-gi>
-                        <div class="h-10 flex items-center" >{{ user.username }}</div>
-                    </n-gi>
-                    <n-gi>
-                    <div class="h-10 flex items-center justify-center" >手机:</div>
-                    </n-gi>
-                    <n-gi>
-                        <div class="h-10 flex items-center" >{{ user.mobile }}</div>
-                    </n-gi>
-                    <n-gi>
-                    <div class="h-10 flex items-center justify-center" >积分:</div>
-                    </n-gi>
-                    <n-gi>
-                        <div class="h-10 flex items-center" >{{ user.score }}</div>
-                    </n-gi>
-                    <n-gi>
-                    <div class="h-10 flex items-center justify-center" >余额:</div>
-                    </n-gi>
-                    <n-gi>
-                        <div class="h-10 flex items-center" >{{ user.money }}</div>
-                    </n-gi>
-                    <n-gi>
-                    <div class="h-10 flex items-center justify-center" >等级:</div>
-                    </n-gi>
-                    <n-gi>
-                        <div class="h-10 flex items-center" >{{ user.level }}</div>
-                    </n-gi>
-                    <n-gi>
-                    <div class="h-10 flex items-center justify-center" >vip:</div>
-                    </n-gi>
-                    <n-gi>
-                        <div class="h-10 flex items-center" >{{ user.vip }}</div>
-                    </n-gi>
-                </n-grid>
-            </div>
-        </n-popover>
+  <div class="relative">
+    <button @click="isOpen = !isOpen" class="flex items-center justify-between w-full px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+      <span>{{ selectedOption.label }}</span>
+      <svg :class="{'rotate-180': isOpen}" class="w-5 h-5 ml-2 -mr-1 transition-transform duration-200 transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <path fill-rule="evenodd" d="M10 14l6-6H4l6 6z"/>
+      </svg>
+    </button>
 
-    </div>
+    <transition enter-active-class="transition ease-out duration-100 transform" enter-class="opacity-0 scale-95" enter-to-class="opacity-100 scale-100" leave-active-class="transition ease-in duration-75 transform" leave-class="opacity-100 scale-100" leave-to-class="opacity-0 scale-95">
+      <div v-if="isOpen" class="absolute z-10 w-full mt-2 bg-white rounded-md shadow-lg">
+        <ul class="py-1">
+          <li v-for="option in options" :key="option.key" @click="handleSelect(option)" class="px-4 py-2 text-sm text-gray-700 cursor-pointer hover:bg-gray-100 hover:text-gray-900">
+            {{ option.label }}
+          </li>
+        </ul>
+      </div>
+    </transition>
+  </div>
 </template>
 <script setup>
 const user = useUser()
+const options = [
+  { key: 1, label: "Option 1" },
+  { key: 2, label: "Option 2" },
+  { key: 3, label: "Option 3" },
+  { key: 4, label: "Option 4" },
+];
+
+const isOpen = ref(false);
+const selectedOption = ref(null);
+watchEffect(() => {
+  selectedOption.value = options[0];
+});
+
+function handleSelect(option) {
+  selectedOption.value = option;
+  isOpen.value = false;
+}
 console.log(user.value);
 </script>
 <style>
-.n-popover:not(.n-popover--raw):not(.n-popover--scrollable):not(.n-popover--show-header-or-footer) {
-    @apply backdrop-filter backdrop-blur-sm bg-light-500/50
-}
-.n-popover-shared .n-popover-arrow-wrapper .n-popover-arrow {
-    @apply backdrop-filter backdrop-blur-sm bg-light-500/50
+button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
 }
 </style>

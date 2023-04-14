@@ -1,5 +1,5 @@
 <script setup>
-import { NConfigProvider, darkTheme, useOsTheme } from 'naive-ui'
+import { NConfigProvider,darkTheme, useOsTheme } from 'naive-ui'
 import { AppSetup } from './utils/app'
 AppSetup()
 const theme = useState('theme.current')
