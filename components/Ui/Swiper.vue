@@ -2,7 +2,7 @@
     <n-carousel
       effect="fade"
       autoplay
-      class="shadow-md h-140 mx-auto rounded-md container mt-20"
+      class="shadow-md h-140 mx-auto rounded-md container mt-20 box"
     >
       <n-carousel-item class="carousel-img rounded-md" v-for="(item,index) in filteredBannerList" :key="index">
         <img

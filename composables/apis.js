@@ -64,7 +64,6 @@ export function goLogin(data){
     return useHttpPost("goLogin","/addons/cms/api.login/login",{
         data,
         lazy:true,
-        data
     })
 }
 // 手机登录
