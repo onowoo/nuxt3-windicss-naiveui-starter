@@ -1,12 +1,16 @@
 <template>
-    <div class="box relative h-[600px] p-[25px] bg-[#ecf0f3] rounded-[12px] overflow-hidden">
+    <div class="box relative h-auto p-[25px] bg-[#ecf0f3] rounded-[12px] overflow-hidden">
         <form class="flex justify-center items-center flex-col w-[100%] h-[100%]" id="a-form" method="" action="">
           <h2 class="form_title title">重置密码</h2>
           <input class="form__input" type="text" placeholder="用户名" />
           <input class="form__input" type="text" placeholder="电子邮箱" />
           <input class="form__input" type="text" placeholder="手机号" />
-          <input class="form__input" type="password" placeholder="密码" />
-          <input class="form__input" type="password" placeholder="确认密码密码" />
+          <div class="flex items-center max-w-[350px] justify-between">
+            <input class="form__input max-w-65" type="text" placeholder="验证码" />
+            <button class="bg-[#4b70e2] text-white w-20 ml-1 rounded-lg py-2.5" @click="subSignUp()">验证码</button>
+          </div>
+          <input class="form__input" type="password" placeholder="新密码" />
+          <input class="form__input" type="password" placeholder="确认新密码" />
           <button class="form__button button submit" @click="subSignUp()">立即重置</button>
         </form>
       </div>
@@ -46,7 +50,7 @@
   .title {
     font-size: 34px;
     font-weight: 700;
-    line-height: 3;
+    padding-bottom: 20px;
     color: #181818;
   }
   
@@ -55,7 +59,7 @@
     width: 180px;
     height: 50px;
     border-radius: 25px;
-    margin-top: 50px;
+    margin-top: 20px;
     font-weight: 700;
     font-size: 14px;
     letter-spacing: 1.15px;
