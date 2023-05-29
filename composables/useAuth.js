@@ -8,10 +8,10 @@ export async function useRefreshUserInfo(){
     const user = useUser()
     // 用户已登录，直接获取用户信息
     if(token.value){
-        const {data:userIndex} = await getUserIndex()
-        const userData = JSON.parse(JSON.stringify(userIndex.value));
+        const {data} = await getUserIndex()
+        const userData = JSON.parse(JSON.stringify(data.value));
         user.value = userData.userInfo;
-        // console.log(user.value);
+        console.log(user.value);
     }
 }
 

@@ -1,33 +1,9 @@
-<script setup>
-import { NConfigProvider,darkTheme, useOsTheme } from 'naive-ui'
-import { AppSetup } from './utils/app'
-AppSetup()
-const theme = useState('theme.current')
-const osThemeRef = useOsTheme()
-const naiveTheme = ref(null)
-onMounted(() => {
-  if (theme.value === 'dark')
-    naiveTheme.value = darkTheme
-  else
-    naiveTheme.value = null
-})
-watch(
-  () => theme.value,
-  (v) => {
-    if (v === 'dark')
-      naiveTheme.value = darkTheme
-    else
-      naiveTheme.value = null
-  },
-)
-</script>
-
 <template>
-  <Html :class="theme">
+  <Html>
     <Body
-      class="transition-colors text-gray-800 dark:text-gray-200 dark:bg-dark-300 bg-[#ecf0f3]"
+      class="transition-colors text-gray-800 bg-gray-50"
     >
-      <NConfigProvider inline-theme-disabled :theme="naiveTheme">
+      <NConfigProvider inline-theme-disabled>
         <NuxtLayout>
           <NuxtPage />
         </NuxtLayout>
@@ -35,6 +11,7 @@ watch(
     </Body>
   </Html>
 </template>
-
+<script setup>
+</script>
 <style>
 </style>

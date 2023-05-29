@@ -2,17 +2,19 @@ import {
     createDiscreteApi
 } from "naive-ui"
 export const fetchConfig = {
-    baseURL:"http://api.zhuiun.com:81",
+    baseURL:"https://api.lianun.com:442",
     headers:{
         'content-type': 'application/json'
     },
     noLoginUrl: [
         '/addons/cms/api.common/init',
+        '/index.php/api/cms_block/index',
         '/addons/cms/api.common/captcha',
         '/addons/cms/api.ems/send',
         '/addons/cms/api.sms/send',
         '/addons/cms/api.archives/index',
         '/addons/cms/api.archives/detail',
+        '/addons/cms/api.archives/get_channel',
         '/addons/cms/api.login/login',
         '/addons/cms/api.login/mobilelogin',
         '/addons/cms/api.login/register',
@@ -73,7 +75,6 @@ export async function useHttp(key,url,options = {}){
         const data = ref(null)
         const error = ref(null)
         return await $fetch(url,options).then(res=>{
-            data.value = res.data
             return {
                 data,
                 error
@@ -115,6 +116,7 @@ export async function useHttp(key,url,options = {}){
 // GET请求
 export function useHttpGet(key,url,options = {}){
     options.method = "GET"
+    options.body = options.data;
     return useHttp(key,url,options)
 }
 

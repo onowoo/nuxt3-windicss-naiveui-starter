@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>home_icon_lan</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#1C1232" offset="0%"></stop>
+            <stop stop-color="#150E25" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-2" x="0" y="0" width="30" height="30" rx="8"></rect>
+        <filter x="-1.7%" y="-1.7%" width="103.3%" height="103.3%" filterUnits="objectBoundingBox" id="filter-3">
+            <feGaussianBlur stdDeviation="0.5" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+            <feOffset dx="0" dy="0" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.549019608   0 0 0 0 0.564705882   0 0 0 0 0.71372549  0 0 0 0.5 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="主界面" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="首页" transform="translate(-15.000000, -51.000000)">
+            <g id="导航栏" transform="translate(0.000000, 44.000000)">
+                <g id="home_icon_lan" transform="translate(15.000000, 7.000000)">
+                    <g id="矩形">
+                        <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+                        <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                    </g>
+                    <path d="M15,23 C19.418278,23 23,19.418278 23,15 C23,10.581722 19.418278,7 15,7 C10.581722,7 7,10.581722 7,15 C7,19.418278 10.581722,23 15,23 Z M15,7 C13,9.66666667 12,12.3333333 12,15 C12,17.6666667 13,20.3333333 15,23 C17,20.3333333 18,17.6666667 18,15 C18,12.3333333 17,9.66666667 15,7 Z M8,14.5 L22,14.5" id="Earth" stroke="#7958FA" stroke-linecap="round" stroke-linejoin="round"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
