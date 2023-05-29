@@ -97,8 +97,10 @@
 <script setup>
 const scrolled = ref(false);
 
-window.addEventListener('scroll', () => {
-  scrolled.value = window.scrollY > 60;
-});
+onMounted(() => {
+  window.addEventListener('scroll', () => {
+    scrolled.value = window.scrollY > 60
+  })
+})
 
 </script>
