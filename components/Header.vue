@@ -3,7 +3,7 @@
     <!-- Main navigation container -->
   <nav
     class="flex-no-wrap relative flex w-full items-center justify-between py-2 shadow-md shadow-black/5  dark:shadow-black/10 lg:flex-wrap lg:justify-start lg:py-4"
-    :class="[scrolled ? 'bg-white text-black' : 'bg-transparent text-white',navPush ? 'bg-white text-black' : 'bg-transparent text-white']"
+    :class="[scrolled || navPush ? 'bg-white text-black' : 'bg-transparent text-white']"
     data-te-navbar-ref>
     <div class="flex w-full flex-wrap items-center justify-between px-3">
       <!-- Hamburger button for mobile view -->
@@ -16,8 +16,8 @@
             @click="(e) => toggleDark()"
           >
           </button> -->
-        <img v-if="!scrolled" src="https://gmgstatics.oss-cn-hangzhou.aliyuncs.com/p/gpn-ssr-official/img/gupiaoniu@2x.f3a34c1.png" class="w-16" alt="">
-        <img v-else src="https://gmgstatics.oss-cn-hangzhou.aliyuncs.com/p/gpn-ssr-official/img/logo4@2x.ecf5b92.png" class="w-16" alt="">
+        <img v-if="scrolled || navPush" src="https://gmgstatics.oss-cn-hangzhou.aliyuncs.com/p/gpn-ssr-official/img/logo4@2x.ecf5b92.png" class="w-16" alt="">
+        <img v-else src="https://gmgstatics.oss-cn-hangzhou.aliyuncs.com/p/gpn-ssr-official/img/gupiaoniu@2x.f3a34c1.png" class="w-16" alt="">
         <span class="text-xs font-thin flex items-center">|</span>
         <span class="text-xs font-thin">淘金者科技集团成员企业旗下产品</span>
 
