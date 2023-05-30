@@ -3,7 +3,7 @@
     <!-- Main navigation container -->
   <nav
     class="flex-no-wrap relative flex w-full items-center justify-between py-2 shadow-md shadow-black/5  dark:shadow-black/10 lg:flex-wrap lg:justify-start lg:py-4"
-    :class="[scrolled ? 'bg-white text-black' : 'bg-transparent text-white']"
+    :class="[scrolled ? 'bg-white text-black' : 'bg-transparent text-white',navPush ? 'bg-white text-black' : 'bg-transparent text-white']"
     data-te-navbar-ref>
     <div class="flex w-full flex-wrap items-center justify-between px-3">
       <!-- Hamburger button for mobile view -->
@@ -29,7 +29,8 @@
         data-te-collapse-init
         data-te-target="#navbarSupportedContent1"
         aria-controls="navbarSupportedContent1"
-        aria-expanded="false"
+        aria-expanded="fasle"
+        @click="navPush = !navPush"
         aria-label="Toggle navigation">
         <!-- Hamburger icon -->
         <span class="[&>svg]:w-7">
@@ -96,7 +97,9 @@
 </template>
 <script setup>
 const scrolled = ref(false);
-
+const navPush = ref(false)
+console.log(navPush.value);
+console.log(scrolled.value);
 onMounted(() => {
   window.addEventListener('scroll', () => {
     scrolled.value = window.scrollY > 60

@@ -8,4 +8,6 @@ import { Quotes } from '~/.nuxt/components';
   <Quotes />
   <Product />
   <Ai />
+  <News />
+  <Partner />
 </template>
