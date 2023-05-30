@@ -61,22 +61,22 @@
         <ul
           class="list-style-none mr-auto flex flex-col pl-0 lg:flex-row"
           data-te-navbar-nav-ref>
-          <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+          <li class="mb-4 lg:mb-0 lg:pr-2 border-b pb-2" data-te-nav-item-ref>
             <!-- Dashboard link -->
             <a
               class="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-zinc-400"
               href="#"
               data-te-nav-link-ref
-              >Dashboard</a
+              >首页</a
             >
           </li>
           <!-- Team link -->
-          <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+          <li class="mb-4 lg:mb-0 lg:pr-2 border-b pb-2" data-te-nav-item-ref>
             <a
               class="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
               href="#"
               data-te-nav-link-ref
-              >Team</a
+              >下载体验</a
             >
           </li>
           <!-- Projects link -->
@@ -85,7 +85,7 @@
               class="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
               href="#"
               data-te-nav-link-ref
-              >Projects</a
+              >行业资讯</a
             >
           </li>
         </ul>
@@ -98,8 +98,6 @@
 <script setup>
 const scrolled = ref(false);
 const navPush = ref(false)
-console.log(navPush.value);
-console.log(scrolled.value);
 onMounted(() => {
   window.addEventListener('scroll', () => {
     scrolled.value = window.scrollY > 60
