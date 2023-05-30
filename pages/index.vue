@@ -7,4 +7,5 @@ import { Quotes } from '~/.nuxt/components';
   <Why />
   <Quotes />
   <Product />
+  <Ai />
 </template>
