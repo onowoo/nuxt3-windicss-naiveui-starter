@@ -9,7 +9,7 @@
         <div class="slide-content flex justify-center items-end">
           <div class="flex flex-col w-full">
             <img class="w-50 mx-auto" src="https://gmgstatics.oss-cn-hangzhou.aliyuncs.com/p/gpn-ssr-official/img/biaoti_mobile@2x.287a160.png"/>
-            <button class="bg-[#ffffff] mt-4 rounded-md w-[160px] mx-auto py-2 px-3 text-[#4c8bff]">移动立即下载</button>
+            <button class="bg-[#ffffff] mt-4 rounded-md w-[160px] mx-auto py-2 px-3 text-[#4c8bff]">立即下载</button>
             <img class="w-60 h-40 mx-auto" src="https://gmgstatics.oss-cn-hangzhou.aliyuncs.com/p/gpn-ssr-official/img/ziyuan@2x.5638238.png" />
           </div>
         </div>

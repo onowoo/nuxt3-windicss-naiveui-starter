@@ -93,6 +93,12 @@
             >
               <NuxtLink class="font-thin" to="/down" >下载体验</NuxtLink>
             </li>
+            <li
+              class="mb-4 lg:mb-0 lg:pr-2 border-b pb-2 lg:border-none lg:pb-0"
+              data-te-nav-item-ref
+            >
+              <NuxtLink class="font-thin" to="/a" >A股资讯</NuxtLink>
+            </li>
           </ul>
         </div>
       </div>
