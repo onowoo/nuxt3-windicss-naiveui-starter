@@ -1,8 +1,8 @@
 <template>
-  <header class="shadow-md fixed z-50 w-[100%]">
+  <header class="shadow-md lg:shadow-none fixed z-50 w-[100%]">
     <!-- Main navigation container -->
   <nav
-    class="flex-no-wrap relative flex w-full items-center justify-between py-2 shadow-md shadow-black/5  dark:shadow-black/10 lg:flex-wrap lg:justify-start lg:py-4"
+    class="flex-no-wrap relative flex w-full items-center justify-between py-2 shadow-md shadow-black/5 lg:shadow-none lg:w-[1000px] lg:mx-auto lg:py-4"
     :class="[scrolled || navPush ? 'bg-white text-black' : 'bg-transparent text-white']"
     data-te-navbar-ref>
     <div class="flex w-full flex-wrap items-center justify-between px-3">
@@ -50,6 +50,7 @@
       <!-- Collapsible navigation container -->
       <div
         class="!visible hidden flex-grow basis-[100%] items-center lg:!flex lg:basis-auto"
+        :class="[scrolled ? 'lg:text-black' : 'lg:text-white']"
         id="navbarSupportedContent1"
         data-te-collapse-item>
         <!-- Logo -->
@@ -61,19 +62,19 @@
         <ul
           class="list-style-none mr-auto flex flex-col pl-0 lg:flex-row"
           data-te-navbar-nav-ref>
-          <li class="mb-4 lg:mb-0 lg:pr-2 border-b pb-2" data-te-nav-item-ref>
+          <li class="mb-4 lg:mb-0 lg:pr-2 border-b pb-2 lg:border-none lg:pb-0" data-te-nav-item-ref>
             <!-- Dashboard link -->
             <a
-              class="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-zinc-400"
+              class=""
               href="#"
               data-te-nav-link-ref
               >首页</a
             >
           </li>
           <!-- Team link -->
-          <li class="mb-4 lg:mb-0 lg:pr-2 border-b pb-2" data-te-nav-item-ref>
+          <li class="mb-4 lg:mb-0 lg:pr-2 border-b pb-2 lg:border-none lg:pb-0" data-te-nav-item-ref>
             <a
-              class="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+              class=""
               href="#"
               data-te-nav-link-ref
               >下载体验</a
@@ -82,7 +83,7 @@
           <!-- Projects link -->
           <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
             <a
-              class="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+              class=""
               href="#"
               data-te-nav-link-ref
               >行业资讯</a
