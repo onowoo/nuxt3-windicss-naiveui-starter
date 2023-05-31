@@ -1,10 +1,12 @@
 <template>
-    <div class="grid grid-cols-3 gap-4 mt-6">
+  <div class="lg:bg-white lg:shadow-sm">
+    <div class="grid grid-cols-3 lg:grid-cols-6 lg:max-w-[1200px] lg:mx-auto gap-4 py-6">
       <div v-for="(item, index) in items" :key="index" class="flex flex-col items-center">
-        <img :src="item.icon" alt="icon" class="w-7 h-7">
-        <span class="mt-2 flex flex-col gap-1 text-[14px] font-light" v-html="item.title"></span>
+        <img :src="item.icon" alt="icon" class="w-15 h-15">
+        <span class="mt-2 flex flex-col gap-1 text-[14px] lg:text-[18px] font-light" v-html="item.title"></span>
       </div>
     </div>
+  </div>
   </template>
   
   <script setup>

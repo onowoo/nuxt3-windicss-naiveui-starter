@@ -1,5 +1,5 @@
 <template>
-  <n-carousel show-arrow autoplay :class="[isMobile ? '' : 'hidden']">
+  <n-carousel show-arrow autoplay :class="[isMobile ? 'hidden' : '']">
     <div class="slide1">
       <div class="carousel-img-wrapper">
         <img
@@ -7,10 +7,13 @@
           src="https://gmgstatics.oss-cn-hangzhou.aliyuncs.com/p/gpn-ssr-official/img/banner2_bg.008b64f.png"
         >
         <div class="slide-content flex justify-center items-end">
-          <div class="flex flex-col w-full">
-            <img class="w-50 mx-auto" src="https://gmgstatics.oss-cn-hangzhou.aliyuncs.com/p/gpn-ssr-official/img/biaoti_mobile@2x.287a160.png"/>
-            <button class="bg-[#ffffff] mt-4 rounded-md w-[160px] mx-auto py-2 px-3 text-[#4c8bff]">移动立即下载</button>
-            <img class="w-60 h-40 mx-auto" src="https://gmgstatics.oss-cn-hangzhou.aliyuncs.com/p/gpn-ssr-official/img/ziyuan@2x.5638238.png" />
+          <div class="flex flex-col lg:flex-row lg:items-center">
+            <img class="w-60 lg:w-260 h-40 lg:h-180" src="https://gmgstatics.oss-cn-hangzhou.aliyuncs.com/p/gpn-ssr-official/img/ziyuan@2x.5638238.png" />
+            <div>
+              <img class="w-50 lg:w-102" src="https://gmgstatics.oss-cn-hangzhou.aliyuncs.com/p/gpn-ssr-official/img/biaoti@2x.76b3fde.png"/>
+              <button class="bg-[#ffffff] mt-4 rounded-md w-[160px] mx-auto py-2 px-3 text-[#4c8bff]">立即下载</button>
+            </div>
+          
           </div>
         </div>
       </div>
@@ -22,10 +25,12 @@
           src="https://gmgstatics.oss-cn-hangzhou.aliyuncs.com/p/gpn-ssr-official/img/banner@2x.5697e4e.png"
         >
         <div class="slide-content flex justify-center items-end">
-          <div class="flex flex-col w-full">
-            <img class="w-50 mx-auto" src="https://gmgstatics.oss-cn-hangzhou.aliyuncs.com/p/gpn-ssr-official/img/biaoti_mobile@2x.287a160.png"/>
-            <button class="bg-[#ffffff] mt-4  rounded-md w-[160px] mx-auto  py-2 px-3 text-[#4c8bff]">立即下载</button>
-            <img class="w-60 mx-auto" src="https://gmgstatics.oss-cn-hangzhou.aliyuncs.com/p/gpn-ssr-official/img/banner_2_phone_mobile.9d726ce.png" />
+          <div class="flex flex-col  lg:flex-row lg:items-center">
+            <img class="w-60 lg:w-240 lg:h-160" src="https://gmgstatics.oss-cn-hangzhou.aliyuncs.com/p/gpn-ssr-official/img/banner_2_phone_mobile.9d726ce.png" />
+            <div>
+              <img class="w-50 lg:w-102" src="https://gmgstatics.oss-cn-hangzhou.aliyuncs.com/p/gpn-ssr-official/img/biaoti@2x.76b3fde.png"/>
+              <button class="bg-[#ffffff] mt-4  rounded-md w-[160px] mx-auto  py-2 px-3 text-[#4c8bff]">立即下载</button>
+            </div>
           </div>
         </div>
       </div>

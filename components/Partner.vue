@@ -1,14 +1,14 @@
 <template>
     <div class="bgNews w-[100%] flex flex-col gap-6 pb-6">
-        <div class="text-2xl pt-8 pt-4 text-center text-dark-500">合作伙伴</div>
+        <div class="text-2xl lg:text-[50px] pt-8 lg:mt-8 pt-4 text-center text-dark-500">合作伙伴</div>
         <div class="flex justify-center">
-            <div class="w-10 border-t border-2"></div>
-            <div class="w-8 border-t border-2 border-blue-500"></div>
-            <div class="w-10 border-t border-2"></div>
+            <div class="w-10 lg:w-20 border-t border-2"></div>
+            <div class="w-8 lg:w-16 border-t border-2 border-blue-500"></div>
+            <div class="w-10 lg:w-20 border-t border-2"></div>
         </div>
-        <div class="grid grid-cols-3 gap-3 mt-6 mx-8">
+        <div class="grid grid-cols-3 lg:grid-cols-6 gap-3 mt-6 mx-8 lg:max-w-[1200px] lg:mx-auto">
             <div v-for="(item, index) in items" :key="index" class="flex flex-col items-center">
-                <img :src="item.icon" alt="icon" class="w-22">
+                <img :src="item.icon" alt="icon" class="w-22 lg:w-44">
                 <span class="mt-2 flex flex-col gap-1 text-[14px] font-light" v-html="item.title"></span>
             </div>
         </div>

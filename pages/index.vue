@@ -1,8 +1,6 @@
-
-import { Quotes } from '~/.nuxt/components';
-
 <template>
   <Swiper />
+  <SwiperPc />
   <Banner />
   <Why />
   <Quotes />
