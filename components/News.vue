@@ -1,12 +1,12 @@
 <template>
   <div class="bgNews w-[100%] flex flex-col gap-6 pb-6">
-      <div class="text-2xl lg:text-[50px] pt-8 lg:mt-16 pt-4 text-center text-light-50">行业动态</div>
+      <div class="text-2xl lg:text-[50px] pt-8 lg:mt-16 pt-4 text-center text-light-50">A股动态</div>
       <div class="flex justify-center">
         <div class="w-10 lg:w-20 border-t border-2"></div>
         <div class="w-8 lg:w-16 border-t border-2 border-blue-500"></div>
         <div class="w-10 lg:w-20 border-t border-2"></div>
       </div>
-      <div class="grid grid-cols-1 lg:grid-cols-2 lg:max-w-[1200px] lg:mx-auto lg:gap-16 lg:py-12">
+      <div class="grid grid-cols-1 lg:grid-cols-2 lg:max-w-[1200px] lg:mx-auto gap-4 lg:gap-16 lg:py-12">
         <div 
         class="text-white flex items-center mx-6 py-6 gap-4 h-20 lg:h-40 border rounded-md text-xs"
         v-for="item in items" :key="item"

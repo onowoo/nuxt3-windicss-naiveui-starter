@@ -67,7 +67,7 @@
                     </div>
                     <div class="flex items-center border rounded-md px-4 py-3 gap-3">
                         <img class="lg:w-10 lg:h-10 w-6 h-6" src="/img/apk.png" alt="">
-                        <div class="flex items-center justify-center w-full px-6">
+                        <div class="flex items-center justify-center w-full px-6 lg:px-3">
                             <div class="lg:text-[24px] text-[12px] font-bold">Android</div>
                         </div>
                     </div>
@@ -86,3 +86,20 @@
     background-size: 100% 100%;
 }
 </style>
+<script setup>
+useHead({
+  title: '下载页面标题',
+  meta: [
+    {
+      hid: 'description',
+      name: 'description',
+      content: '这是页面描述'
+    },
+    {
+      hid: 'keywords',
+      name: 'keywords',
+      content: '关键词1, 关键词2, 关键词3'
+    },
+  ],
+})
+</script>
